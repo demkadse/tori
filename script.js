@@ -22,12 +22,7 @@ const musicChoice = document.querySelector('#music-choice');
 const musicPlayer = document.querySelector('#music-player');
 const musicToggle = document.querySelector('#music-toggle');
 const playerIcon = musicToggle.querySelector('.player-icon');
-const trackControl = document.querySelector('#track-control');
 const volumeControl = document.querySelector('#volume-control');
-const tracks = {
-  theme: 'assets/tori-epic.ogg',
-  lyrics: 'assets/for-my-moon-my-little-star-lyrics.ogg'
-};
 
 music.volume = .65;
 function refreshPlayer() {
@@ -46,13 +41,6 @@ musicToggle.addEventListener('click', () => {
   else { music.pause(); refreshPlayer(); }
 });
 volumeControl.addEventListener('input', () => { music.volume = volumeControl.value / 100; });
-trackControl.addEventListener('change', () => {
-  const shouldResume = !music.paused;
-  music.src = tracks[trackControl.value];
-  music.load();
-  if (shouldResume) music.play().then(refreshPlayer).catch(refreshPlayer);
-  else refreshPlayer();
-});
 music.addEventListener('play', refreshPlayer);
 music.addEventListener('pause', refreshPlayer);
 function showChapter(key) {
