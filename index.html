@@ -46,7 +46,11 @@
           <span class="player-icon" aria-hidden="true">▶</span>
         </button>
         <div class="player-info">
-          <span class="player-label" id="player-label">Toris Thema</span>
+          <label class="visually-hidden" for="track-control">Musiktitel auswählen</label>
+          <select class="track-control" id="track-control" aria-label="Musiktitel auswählen">
+            <option value="theme">For my moon, my little star</option>
+            <option value="lyrics">For my moon, my little star (Lyrics)</option>
+          </select>
           <input class="volume-control" id="volume-control" type="range" min="0" max="100" value="65" aria-label="Lautstärke" />
         </div>
       </section>

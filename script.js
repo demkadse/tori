@@ -22,15 +22,18 @@ const musicChoice = document.querySelector('#music-choice');
 const musicPlayer = document.querySelector('#music-player');
 const musicToggle = document.querySelector('#music-toggle');
 const playerIcon = musicToggle.querySelector('.player-icon');
-const playerLabel = document.querySelector('#player-label');
+const trackControl = document.querySelector('#track-control');
 const volumeControl = document.querySelector('#volume-control');
+const tracks = {
+  theme: 'assets/tori-epic.ogg',
+  lyrics: 'assets/for-my-moon-my-little-star-lyrics.ogg'
+};
 
 music.volume = .65;
 function refreshPlayer() {
   const isPlaying = !music.paused;
   playerIcon.textContent = isPlaying ? 'Ⅱ' : '▶';
   musicToggle.setAttribute('aria-label', isPlaying ? 'Musik pausieren' : 'Musik abspielen');
-  playerLabel.textContent = isPlaying ? 'Toris Thema' : 'Musik pausiert';
 }
 function revealPlayer() { musicChoice.hidden = true; musicPlayer.hidden = false; }
 document.querySelector('#music-yes').addEventListener('click', () => {
@@ -43,6 +46,13 @@ musicToggle.addEventListener('click', () => {
   else { music.pause(); refreshPlayer(); }
 });
 volumeControl.addEventListener('input', () => { music.volume = volumeControl.value / 100; });
+trackControl.addEventListener('change', () => {
+  const shouldResume = !music.paused;
+  music.src = tracks[trackControl.value];
+  music.load();
+  if (shouldResume) music.play().then(refreshPlayer).catch(refreshPlayer);
+  else refreshPlayer();
+});
 music.addEventListener('play', refreshPlayer);
 music.addEventListener('pause', refreshPlayer);
 function showChapter(key) {
