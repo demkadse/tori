@@ -4,10 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#08111e" />
-    <title>Charakterportrait</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+    <title>Tori · Charakterportrait</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -15,13 +12,13 @@
       <header class="site-header">
         <a class="wordmark" href="#frau" aria-label="Zur Charakterübersicht">
           <span class="wordmark__sigil">✦</span>
-          <span>Veyra</span>
+          <span>Tori</span>
         </a>
         <nav aria-label="Charakteraspekte">
           <a class="nav-link is-active" href="#frau" data-tab="frau">Die Frau</a>
           <a class="nav-link" href="#mutter" data-tab="mutter">Die Mutter</a>
-          <a class="nav-link" href="#jaegerin" data-tab="jaegerin">Die Jägerin</a>
           <a class="nav-link" href="#glaeubige" data-tab="glaeubige">Die Gläubige</a>
+          <a class="nav-link" href="#jaegerin" data-tab="jaegerin">Die Jägerin</a>
         </nav>
       </header>
 
@@ -29,10 +26,11 @@
         <p class="eyebrow" id="story-kicker">Ein Portrait in vier Wahrheiten</p>
         <div class="ornament" aria-hidden="true"><span></span>✦<span></span></div>
         <h1 id="story-title">Die Frau</h1>
-        <p class="lead" id="story-lead">Unter silbernem Mondlicht ist sie mehr als die Klinge an ihrer Seite.</p>
+        <p class="lead" id="story-lead">Ihr Leben war nie geradlinig - und genau darin liegt seine Wahrheit.</p>
         <div class="copy" id="story-copy">
-          <p>Veyra trägt das Schweigen wie andere einen Mantel: nicht aus Kälte, sondern weil manche Geschichten nur im Schutz der Nacht atmen können. Ihr Lachen ist selten, doch wenn es kommt, erinnert es an Regen auf warmem Stein.</p>
-          <p>Zwischen den Pflichten eines langen Lebens bewahrt sie sich eine stille Neugier auf all die kleinen Wunder, die Eorzea vergisst: den Duft von Sternblumen, ein Lied in einer fremden Schenke, die Wärme eines Bechers Tee.</p>
+          <p>Tori kannte lange kein Zuhause. Als Waise lernte sie früh, für sich selbst einzustehen, bis die Familie ihrer heutigen Schwester sie aufnahm und ihr einen Platz gab, den sie nie für selbstverständlich hält. Auch heute noch liegt in ihr etwas Ungezähmtes - ein Rest jener Jahre, in denen Freiheit weniger ein Wunsch als eine Notwendigkeit war.</p>
+          <p>Das Militär versprach ihr Richtung und Halt, doch Tori war zu eigensinnig für fremde Befehle und zu temperamentvoll für eine lange Karriere in Reih und Glied. Nach einigen Jahren zog sie weiter, zunächst als Söldnerin und schließlich in die Reihen der Luftpiraten. Dort wurde sie zur Anführerin - gefürchtet für ihre Entschlossenheit, aber nie für Grausamkeit. Ihre Raubzüge hinterließen leere Laderäume, keine Toten, und als Limsa Lominsa ihre Hilfe in einer Schlacht brauchte, stand Tori auf der richtigen Seite.</p>
+          <p>Erst als sie das Fliegen hinter sich ließ und sich ein ziviles Leben aufbaute, begegnete sie Samin'ya. Aus dieser Begegnung wurde Liebe, aus Liebe eine Familie. Mit ihrer Frau hat Tori eine Tochter, Nihal, deren Name den ihres ausgestorbenen Clans weiterträgt. Für Tori ist sie beides - Erinnerung an das Verlorene und ein Versprechen für alles, was noch kommen darf.</p>
         </div>
         <p class="chapter" id="story-chapter">I · Die Wahrheit hinter dem Stahl</p>
       </section>
@@ -42,7 +40,31 @@
         <span class="footer-rule" aria-hidden="true"></span>
         <span id="chapter-count">01 / 04</span>
       </footer>
+
+      <section class="music-player" id="music-player" aria-label="Musikplayer" hidden>
+        <button class="player-button" id="music-toggle" type="button" aria-label="Musik abspielen">
+          <span class="player-icon" aria-hidden="true">▶</span>
+        </button>
+        <div class="player-info">
+          <span class="player-label" id="player-label">Toris Thema</span>
+          <input class="volume-control" id="volume-control" type="range" min="0" max="100" value="65" aria-label="Lautstärke" />
+        </div>
+      </section>
+
+      <div class="music-choice" id="music-choice" role="dialog" aria-modal="true" aria-labelledby="music-question">
+        <div class="music-choice__panel">
+          <span class="music-choice__mark" aria-hidden="true">✦</span>
+          <p class="music-choice__eyebrow">Willkommen in Toris Geschichte</p>
+          <h2 id="music-question">Möchtest du Musik hören?</h2>
+          <p>Ein Thema begleitet dieses Portrait. Du kannst die Lautstärke später jederzeit anpassen.</p>
+          <div class="music-choice__actions">
+            <button class="choice-button choice-button--primary" id="music-yes" type="button">Musik hören</button>
+            <button class="choice-button" id="music-no" type="button">Ohne Musik</button>
+          </div>
+        </div>
+      </div>
     </main>
+    <audio id="background-music" src="assets/tori-epic.ogg" loop preload="metadata"></audio>
     <script src="script.js"></script>
   </body>
 </html>
