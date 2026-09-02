@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#08111e" />
+    <title>Charakterportrait</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="portrait" aria-live="polite">
+      <header class="site-header">
+        <a class="wordmark" href="#frau" aria-label="Zur Charakterübersicht">
+          <span class="wordmark__sigil">✦</span>
+          <span>Veyra</span>
+        </a>
+        <nav aria-label="Charakteraspekte">
+          <a class="nav-link is-active" href="#frau" data-tab="frau">Die Frau</a>
+          <a class="nav-link" href="#mutter" data-tab="mutter">Die Mutter</a>
+          <a class="nav-link" href="#jaegerin" data-tab="jaegerin">Die Jägerin</a>
+          <a class="nav-link" href="#glaeubige" data-tab="glaeubige">Die Gläubige</a>
+        </nav>
+      </header>
+
+      <section class="story" aria-labelledby="story-title">
+        <p class="eyebrow" id="story-kicker">Ein Portrait in vier Wahrheiten</p>
+        <div class="ornament" aria-hidden="true"><span></span>✦<span></span></div>
+        <h1 id="story-title">Die Frau</h1>
+        <p class="lead" id="story-lead">Unter silbernem Mondlicht ist sie mehr als die Klinge an ihrer Seite.</p>
+        <div class="copy" id="story-copy">
+          <p>Veyra trägt das Schweigen wie andere einen Mantel: nicht aus Kälte, sondern weil manche Geschichten nur im Schutz der Nacht atmen können. Ihr Lachen ist selten, doch wenn es kommt, erinnert es an Regen auf warmem Stein.</p>
+          <p>Zwischen den Pflichten eines langen Lebens bewahrt sie sich eine stille Neugier auf all die kleinen Wunder, die Eorzea vergisst: den Duft von Sternblumen, ein Lied in einer fremden Schenke, die Wärme eines Bechers Tee.</p>
+        </div>
+        <p class="chapter" id="story-chapter">I · Die Wahrheit hinter dem Stahl</p>
+      </section>
+
+      <footer class="site-footer">
+        <span>Eine Geschichte aus Eorzea</span>
+        <span class="footer-rule" aria-hidden="true"></span>
+        <span id="chapter-count">01 / 04</span>
+      </footer>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
